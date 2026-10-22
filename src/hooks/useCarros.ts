@@ -12,10 +12,10 @@ const KEY = ['carros']
 
 export function useCarros(){
     return useQuery({
-        queryKey: ['carros'],
-        queryFn: ()=>{
+        queryKey: KEY,
+        queryFn: async ()=>{
             console.log("GET ejecutado con tanStack")
-            return carrosService.getAll()
+            return await carrosService.getAll()
         },
         //staleTime no significa cuantos tiempo se guardan los datos en cache
         //Sino cuanto tiempo los datos se consideran frescos
